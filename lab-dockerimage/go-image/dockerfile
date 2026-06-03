@@ -1,0 +1,7 @@
+FROM golang:tip-alpine3.23
+
+WORKDIR app/
+
+COPY app.go .
+
+CMD ["go","run","app.go"]
