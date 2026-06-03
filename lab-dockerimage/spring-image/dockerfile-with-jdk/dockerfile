@@ -1,0 +1,9 @@
+FROM openjdk:27-ea-slim 
+
+WORKDIR /app
+
+COPY *.jar app.jar
+
+EXPOSE 8080
+
+CMD ["java","-jar","app.jar"]
