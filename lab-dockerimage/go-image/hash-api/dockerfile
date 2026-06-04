@@ -1,0 +1,25 @@
+FROM golang:1.25 AS builder
+
+WORKDIR app
+
+COPY . .
+
+RUN CGO_ENABLED=0 GOOS=linux go build -o hash-api ./cmd
+
+RUN ls -la
+
+RUN find / -name hash-api
+
+
+
+FROM alpine
+
+WORKDIR app
+
+COPY --from=builder /go/app/hash-api hash-api
+
+EXPOSE 8080
+
+RUN find / -name hash-api
+
+CMD ["/app/hash-api"]
