@@ -1,0 +1,9 @@
+What image do we need to pull :   neosmemo/memos:stable 
+
+What port does it expose : 5230
+
+Does it work with data : YES
+
+Are we going to lose data if we delete a container : YES SO IT NEEDS A VOLUME SO WE PERSISTE DATA 
+
+Does it require any other images or it serves all by it-self : BY IT SELF
